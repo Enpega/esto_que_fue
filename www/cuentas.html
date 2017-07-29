@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<!--
+  * Please see the included README.md file for license terms and conditions.
+  -->
+<head>
+    <title>Esto que fue</title>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+
+    <!-- see http://webdesign.tutsplus.com/tutorials/htmlcss-tutorials/quick-tip-dont-forget-the-viewport-meta-tag -->
+    <!-- <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1"> -->
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=no">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes, minimum-scale=1, maximum-scale=2"> -->
+    <style>
+        /* following two viewport lines are equivalent to meta viewport statement above, and is needed for Windows */
+        /* see http://www.quirksmode.org/blog/archives/2014/05/html5_dev_conf.html and http://dev.w3.org/csswg/css-device-adapt/ */
+        @-ms-viewport { width: 100vw ; min-zoom: 100% ; zoom: 100% ; }          @viewport { width: 100vw ; min-zoom: 100% zoom: 100% ; }
+        @-ms-viewport { user-zoom: fixed ; min-zoom: 100% ; }                   @viewport { user-zoom: fixed ; min-zoom: 100% ; }
+        /*@-ms-viewport { user-zoom: zoom ; min-zoom: 100% ; max-zoom: 200% ; }   @viewport { user-zoom: zoom ; min-zoom: 100% ; max-zoom: 200% ; }*/
+        @import url('https://fonts.googleapis.com/css?family=Hind+Siliguri');
+    </style>
+
+    <!-- See explanation at the bottom of this file for info regarding placement of JS libraries. -->
+    <!-- These library references (below) are just examples to give you the general idea... -->
+    <!-- <script src="lib/mc/hammer.js"></script> -->
+    <!-- <script src="lib/ft/fastclick.js"></script> -->
+    <!-- <script src="lib/jq/jquery.js"></script> -->
+
+    
+     <!-- IMPORTANT: Do not include a weinre script tag as part of your release builds! -->
+    <!-- Place your remote debugging weinre script URL here, if it does not work below. -->
+
+    <!-- See <head> section above for additional JS libraries loaded as part of this application. -->
+
+    <!-- "Phantom" cordova.js required for projects that use Cordova plugins. -->
+    <script src="cordova.js"></script>
+
+    <!-- for your event code, see README and file comments for details 
+    <script src="js/app.js"></script>
+    <!-- for your init code, see README and file comments for details
+    <script src="js/init-app.js"></script>
+    <!-- normalizes device and document ready events, see file for details 
+    <script src="xdk/init-dev.js"></script> -->
+
+    <!-- IMPORTANT: Do not include a weinre script tag as part of your release builds! -->
+    <!-- Place your remote debugging weinre script URL here, if it does not work above. -->
+    
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/font-awesome/css/font-awesome.min.css">
+    
+    <script type="text/javascript">
+        function cambiar_opcion(opcion1)
+        {
+            var divTarjeta = document.getElementById("tarjeta");
+            var divEfectivo =  document.getElementById("efectivo");
+            
+            if (opcion1=="efectivo" && opcion=="T")
+            {
+                divEfectivo.classList.remove("opcion-no-seleccionada");
+                divEfectivo.classList.add("opcion-seleccionada");
+                divTarjeta.classList.remove("opcion-seleccionada");
+                divTarjeta.classList.add("opcion-no-seleccionada");
+                opcion = "E";
+                
+            }
+            else if (opcion1=="tarjeta" && opcion=="E")
+            {
+                divEfectivo.classList.remove("opcion-seleccionada");
+                divEfectivo.classList.add("opcion-no-seleccionada");
+                divTarjeta.classList.remove("opcion-no-seleccionada");
+                divTarjeta.classList.add("opcion-seleccionada");
+                opcion = "T";
+            }
+        } //cambiar_opcion
+        
+        var opcion = "E";
+    </script>
+</head>
+
+
+<body>
+    <div class="titulo">
+        <div style="float:left;" width="20%" onclick="location.href='index.html'"><i class="fa fa-chevron-left"></i></div><div>¿Esto qué fue?</div>
+    </div>
+    <div class="sub-titulo">
+       Cuentas
+    </div>
+    <div id="lista_de_cuentas">
+        &nbsp; 
+    </div>
+    <div class="sub-titulo">
+       Nueva cuenta
+    </div>
+    <br>
+    Descripción
+    <input type="text" id="txtDescripcion" name="txtDescripcion">
+    <br><br>
+    Tipo
+    <!-- <div id="opciones">
+        <div style="float:left;" width="50%" id="efectivo" class="opcion-seleccionada" onclick="cambiar_opcion(this.id);">Efectivo</div>
+        <div id="tarjeta" onclick="cambiar_opcion(this.id);">Tarjeta</div>
+    </div> -->
+    <table width="100%">
+        <tr>
+            <td id="efectivo" onclick="cambiar_opcion(this.id);" width="50%" align="center" class="opcion-seleccionada">Efectivo</td>
+            <td id="tarjeta" onclick="cambiar_opcion(this.id);" align="center" class="opcion-no-seleccionada">Tarjeta</td>
+        </tr>
+    </table>
+    <br><br>
+    <div class="boton" onclick="">
+        <i class="fa fa-check"></i>&nbsp;&nbsp;Guardar
+    </div>
+</body>
+
+
+</html>
