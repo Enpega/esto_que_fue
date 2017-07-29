@@ -1,6 +1,8 @@
 # ignore Cordova/PhoneGap CLI directories
 # in essence, everything but *.xdk file and www directory
 /*
+!/.tern-defs
+!/plugins
 !/www
 !/docs
 !/config.xml
