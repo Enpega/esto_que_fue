@@ -22,5 +22,13 @@
         },
         "is_top_level": true,
         "variables": {}
+    },
+    "cordova-sqlite-ext": {
+        "source": {
+            "type": "local",
+            "path": "C:\\Users\\Chipo\\Desktop\\cordova-sqlite-ext"
+        },
+        "is_top_level": true,
+        "variables": {}
     }
 }

@@ -5,7 +5,7 @@
       "projectTypeName": "com.intel.xdk.projecttype.jsapp",
       "src": "jsapp/template-blank-cordova-ad-project/sample.zip",
       "projectGuid": "f3a607ec-453d-499f-8dbd-8c5d8d3e2890",
-      "lastModifiedDate": 1501286507746,
+      "lastModifiedDate": 1501727495462,
       "creationDate": 1501286416686
     },
     "sourceDirectory": "www",
@@ -67,6 +67,27 @@
         "checksum": "47137083",
         "gitref": "",
         "description": "Cordova Splashscreen Plugin"
+      },
+      {
+        "id": "cordova-sqlite-ext",
+        "name": "Cordova sqlite storage plugin with extra features",
+        "version": "0.10.5",
+        "originType": "local",
+        "origin": "/C/Users/Chipo/Desktop/cordova-sqlite-ext",
+        "gitref": "",
+        "paramvals": {},
+        "sourceLocation": "plugins/cordova-sqlite-ext",
+        "selectedState": "Included",
+        "checksum": "93f7acd",
+        "dependsOn": [],
+        "topLevel": true,
+        "cordovaVersion": ">=3.0.0",
+        "author": "Litehelpers/Various",
+        "permissions": {},
+        "description": "Native interface to SQLite for PhoneGap/Cordova. Allows you to use more storage and provides more flexibility than the standard Web SQL database (window.openDatabase).",
+        "data": {},
+        "dependedBy": [],
+        "custom": "true"
       }
     ],
     "buildConfigurations": {
