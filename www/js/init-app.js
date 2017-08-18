@@ -67,8 +67,8 @@ app.initEvents = function() {
     else                                                            // else, assume touch events available
         evt = "touchend" ;                                          // not optimum, but works
 
-    el = document.getElementById("id_btnHello") ;
-    el.addEventListener(evt, myEventHandler, false) ;
+    //el = document.getElementById("id_btnHello") ;
+    //el.addEventListener(evt, myEventHandler, false) ;
 
     // NOTE: ...you can put other miscellaneous init stuff in this function...
     // NOTE: ...and add whatever else you want to do now that the app has started...
@@ -82,9 +82,11 @@ app.initEvents = function() {
     // exit to idle state and wait for app events...
 
     app.consoleLog(fName, "exit") ;
+    
 } ;
-document.addEventListener("app.Ready", app.initEvents, false) ;
 
+
+document.addEventListener("app.Ready", app.initEvents, false) ;
 
 
 // Just a bunch of useful debug console.log() messages.

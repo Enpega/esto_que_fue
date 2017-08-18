@@ -35,46 +35,18 @@
     <!-- "Phantom" cordova.js required for projects that use Cordova plugins. -->
     <script src="cordova.js"></script>
 
-    <!-- for your event code, see README and file comments for details 
+    <!-- for your event code, see README and file comments for details -->
     <script src="js/app.js"></script>
-    <!-- for your init code, see README and file comments for details
+    <!-- for your init code, see README and file comments for details -->
     <script src="js/init-app.js"></script>
-    <!-- normalizes device and document ready events, see file for details 
-    <script src="xdk/init-dev.js"></script> -->
+    <!-- normalizes device and document ready events, see file for details -->
+    <script src="xdk/init-dev.js"></script>
 
     <!-- IMPORTANT: Do not include a weinre script tag as part of your release builds! -->
     <!-- Place your remote debugging weinre script URL here, if it does not work above. -->
     
     <link rel="stylesheet" href="css/estilos.css">
     <link rel="stylesheet" href="css/font-awesome/css/font-awesome.min.css">
-    
-    <script type="text/javascript">
-        function cambiar_opcion(opcion1)
-        {
-            var divTarjeta = document.getElementById("tarjeta");
-            var divEfectivo =  document.getElementById("efectivo");
-            
-            if (opcion1=="efectivo" && opcion=="T")
-            {
-                divEfectivo.classList.remove("opcion-no-seleccionada");
-                divEfectivo.classList.add("opcion-seleccionada");
-                divTarjeta.classList.remove("opcion-seleccionada");
-                divTarjeta.classList.add("opcion-no-seleccionada");
-                opcion = "E";
-                
-            }
-            else if (opcion1=="tarjeta" && opcion=="E")
-            {
-                divEfectivo.classList.remove("opcion-seleccionada");
-                divEfectivo.classList.add("opcion-no-seleccionada");
-                divTarjeta.classList.remove("opcion-no-seleccionada");
-                divTarjeta.classList.add("opcion-seleccionada");
-                opcion = "T";
-            }
-        } //cambiar_opcion
-        
-        var opcion = "E";
-    </script>
 </head>
 
 
@@ -93,6 +65,7 @@
     </div>
     <br>
     Descripción
+    &nbsp;
     <input type="text" id="txtDescripcion" name="txtDescripcion">
     <br><br>
     Tipo
@@ -107,7 +80,7 @@
         </tr>
     </table>
     <br><br>
-    <div class="boton" onclick="">
+    <div class="boton" onclick="guardarCuenta();">
         <i class="fa fa-check"></i>&nbsp;&nbsp;Guardar
     </div>
 </body>

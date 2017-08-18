@@ -40,7 +40,7 @@
     <!-- for your init code, see README and file comments for details -->
     <script src="js/init-app.js"></script>
     <!-- normalizes device and document ready events, see file for details -->
-    <script src="xdk/init-dev.js"></script> 
+    <script src="xdk/init-dev.js"></script>
 
     <!-- IMPORTANT: Do not include a weinre script tag as part of your release builds! -->
     <!-- Place your remote debugging weinre script URL here, if it does not work above. -->
@@ -51,66 +51,38 @@
 
 
 <body>
-    <div id="contenedorGeneral">
-        <div id="contenedorPrincipal">
-            <div class="titulo">
-                ¿Esto qué fue?
-            </div>
-            <br><br><br>
-            <div class="boton" onclick="activarPagina('contenedorCuentas');">
-                <i class="fa fa-file-text-o"></i>&nbsp;&nbsp;Cuentas
-            </div>
-            <br><br>
-            <div class="boton">
-                <i class="fa fa-pencil"></i>&nbsp;&nbsp;Registrar
-            </div>
-            <br><br>
-            <div class="boton">
-                <i class="fa fa-list-alt"></i>&nbsp;&nbsp;Consultar
-            </div>
-            <br><br>
-            <div align="right">
-                <div align="center" width="20%" style="background: darkslateblue;max-width: 50px; color:white;"><i class="fa fa-info fa-1x"></i></div>
-            </div>
-        </div> <!-- contenedorPrincipal -->
-        
-        <div id="contenedorCuentas">
-            <div class="titulo">
-                <div style="float:left;" width="20%" onclick="activarPagina('contenedorPrincipal');"><i class="fa fa-chevron-left"></i></div><div>¿Esto qué fue?</div>
-            </div>
-            <div class="sub-titulo">
-                Cuentas
-            </div>
-            <div id="listaDeCuentas">
-                &nbsp; 
-            </div>
-            <div class="sub-titulo">
-                Nueva cuenta
-            </div>
-            <br>
-            Descripción
-            &nbsp;
-            <input type="text" id="txtDescripcion" name="txtDescripcion">
-            <br><br>
-            Tipo
-            <!-- <div id="opciones">
-                <div style="float:left;" width="50%" id="efectivo" class="opcion-seleccionada" onclick="cambiar_opcion(this.id);">Efectivo</div>
-                <div id="tarjeta" onclick="cambiar_opcion(this.id);">Tarjeta</div>
-            </div> -->
-            <table width="100%">
-                <tr>
-                    <td id="efectivo" onclick="cambiar_opcion(this.id);" width="50%" align="center" class="opcion-seleccionada">Efectivo</td>
-                    <td id="tarjeta" onclick="cambiar_opcion(this.id);" align="center" class="opcion-no-seleccionada">Tarjeta</td>
-                </tr>
-            </table>
-            <br><br>
-            <div class="boton" onclick="guardarCuenta();">
-                <i class="fa fa-check"></i>&nbsp;&nbsp;Guardar
-            </div>
-        </div> <!-- contenedorCuentas -->
-    </div> <!-- contenedorGeneral -->
-
-    
+    <div class="titulo">
+        <div style="float:left;" width="20%" onclick="location.href='index.html'"><i class="fa fa-chevron-left"></i></div><div>¿Esto qué fue?</div>
+    </div>
+    <div class="sub-titulo">
+       Registrar
+    </div>
+    <div id="lista_de_cuentas">
+        &nbsp; 
+    </div>
+    <div class="sub-titulo">
+       Nueva cuenta
+    </div>
+    <br>
+    Descripción
+    &nbsp;
+    <input type="text" id="txtDescripcion" name="txtDescripcion">
+    <br><br>
+    Tipo
+    <!-- <div id="opciones">
+        <div style="float:left;" width="50%" id="efectivo" class="opcion-seleccionada" onclick="cambiar_opcion(this.id);">Efectivo</div>
+        <div id="tarjeta" onclick="cambiar_opcion(this.id);">Tarjeta</div>
+    </div> -->
+    <table width="100%">
+        <tr>
+            <td id="efectivo" onclick="cambiar_opcion(this.id);" width="50%" align="center" class="opcion-seleccionada">Efectivo</td>
+            <td id="tarjeta" onclick="cambiar_opcion(this.id);" align="center" class="opcion-no-seleccionada">Tarjeta</td>
+        </tr>
+    </table>
+    <br><br>
+    <div class="boton" onclick="guardarCuenta();">
+        <i class="fa fa-check"></i>&nbsp;&nbsp;Guardar
+    </div>
 </body>
 
 
