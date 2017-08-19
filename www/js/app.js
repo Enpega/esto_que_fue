@@ -54,7 +54,7 @@ function onDeviceReady()
 
 //***Funciones correspondientes a la administración de cuentas***
 
-function consultarCuentas()
+/*function consultarCuentas()
 {
     console.log("Entro consultar");
     var db = window.openDatabase("EQF.db", "1.0", "EQF", 200000);
@@ -66,7 +66,7 @@ function consultarCuentas()
             }
         }, null);
     });
-} //consultarCuentas
+}*/ //consultarCuentas
 
 
 function guardarCuenta()
@@ -92,7 +92,29 @@ function guardarCuenta()
     //Se muestra la información de la nueva cuenta (**PENDIENTE**)
 
 } //guardarCuenta
-        
+
+function borrarCuenta(inCuenta)
+{
+    console.log("Entro borrarCuentas");
+    console.log(inCuenta);
+    if (confirm("¿Confirma que quiere borrar la cuenta?"))
+    {
+        var db = window.openDatabase("EQF.db", "1.0", "EQF", 200000);
+        db.transaction(function(transaction) {
+            var executeQuery = "DELETE FROM tbl_cuentas WHERE rowid = ?";
+            transaction.executeSql(executeQuery, [inCuenta], function(tx, result) {
+                console.log("Entro a borrar");
+                alert("Cuenta borrada");
+                listarCuentas();
+            //console.log(registro);
+            },
+            function(error){
+                alert('Ocurrió un error al intentar listar las cuentas');
+            });
+        });
+    }
+} //borrarCuenta
+
 function listarCuentas()
 {
     console.log("entro listarCuentas");
@@ -101,15 +123,15 @@ function listarCuentas()
     tablaCuentas.innerHTML = "";
     var registro = "<table width='100%'>";
     db.transaction(function(transaction) {
-        var executeQuery = "SELECT * FROM tbl_Cuentas";
+        var executeQuery = "SELECT rowid, * FROM tbl_Cuentas";
         transaction.executeSql(executeQuery, [], function(tx, result) {
             console.log("Entro a listar");
             for (var x=0; x<result.rows.length; x++)
             {
-                registro = registro + "<tr><td>" + result.rows.item(x).cue_Descripcion + "</td><td>" + result.rows.item(x).cue_Tipo+ "</td></tr>";
+                registro = registro + "<tr><td width='80%'>" + result.rows.item(x).cue_Descripcion + "</td><td width='10%'>" + result.rows.item(x).cue_Tipo+ "</td><td width='10%' onclick='borrarCuenta(" + result.rows.item(x).rowid + ");'><i class='fa fa-trash-o'></i></td></tr>";
             }
             tablaCuentas.innerHTML = registro + "</table>";
-            console.log(registro);
+            //console.log(registro);
         },
         function(error){
             alert('Ocurrió un error al intentar listar las cuentas');
